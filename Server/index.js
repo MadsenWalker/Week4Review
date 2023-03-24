@@ -11,7 +11,11 @@ app.use(express.json())
 app.use(cors())
 
 // EndPoints
+const {getDinos,addDino, deleteDino} = require('./controller')
 
+app.get('/dinos',getDinos)
+app.post('/dinos', addDino)
+app.delete('/dinos/:id', deleteDino)
 
 //Open door/port for my server
 app.listen(2319, () => console.log("2319! We've got a 2319!"))
